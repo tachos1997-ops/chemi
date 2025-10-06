@@ -1,0 +1,15 @@
+const data = [
+  'data:image/png;base64,'
+  'iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACV0lEQVR42u3XXWjNcRgH8L8NzYiyJhop0W6WizVp42q1FIUm',
+  'zSmvy3KxmrZWx81oRElaS1qUlzkYTp3YyTJvbchkokVbC7VyMbmg5MadPtfOXsr0/9Munnp6nu/zfV5+z+93/ifYejkIwpRg',
+  'uoB/soBt7TOD7YmcGVWJ3CxCZ/urBVS2Zwc7rs7L2tWRN2vfzSU5+5PLcmuSy+cSOhsfDOyUFqDL3TfyZ0tWmypccPDO6ryG',
+  'zuJFjemSxYTOxgcDK2ZKCohdm59dfatgDnKJDnWtW9p0r3xF8/0Nq44+2FhI6Gx8MLBixP5RAQiMt+520cL43dKCI90VK088',
+  '2lJ0qqequOXJzrWtT/eUETobHwysGLETFTHu2HWBSGc6leTMs+r15/pqKy68rN90qb9xM6Gz8cHAihGLY7zjGHPhnKNR6gbh',
+  '6d7YmrbnB8olvP7mcCw5cHxv6u3JGkJn44OBFSMWB66xFjOj0SZbJudppLpCfOVVvFKy9GBrXffw+fjD9xebCJ2NDwZWjFgc',
+  'uHBOugDXSeXG6FyNVncSdA2dbej5kDjWN5Jq6f+UbiN0Nj4YWDFiceDCOakCPCjutGtls3XifI1YlxJJ+m60t2P4y4tOQmfj',
+  'g4EVIxYHLpyZHqvfDF4122t0rpcNt2Q6M2rdSjjydeDx6PePrwmdjQ8GVoxYHLhw4p6wABvrzDwwFsk1M1LL5rx1qmuJf/z8',
+  '9pnQ2fhgYMWIxYELZ6bbEL0CQj+C0Jcw9GsYiYco9Kc49B+jSPwcR+KDJBKfZJH4KI3EZ/n0P6P/toBfMepY8HyRbRIAAAAA',
+  'SUVORK5CYII='
+].join('');
+
+export default data;

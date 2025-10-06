@@ -1,0 +1,11 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'>
+  <defs>
+    <radialGradient id='grad' cx='50%' cy='50%' r='70%'>
+      <stop offset='0%' stop-color='#ffc371' stop-opacity='0.95'/>
+      <stop offset='100%' stop-color='#040014' stop-opacity='1'/>
+    </radialGradient>
+  </defs>
+  <rect x='4' y='4' width='120' height='120' rx='26' fill='url(#grad)' stroke='#ffc371' stroke-width='6'/>
+  <text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Verdana' font-size='32' fill='#ffffff'>V</text>
+  <text x='50%' y='84%' dominant-baseline='middle' text-anchor='middle' font-family='Verdana' font-size='14' fill='#b2f7ef'>Virus</text>
+</svg>
