@@ -1,0 +1,5 @@
+Django>=4.2,<5.0
+Flask>=2.3,<3.0
+itsdangerous>=2.1
+click>=8.1
+Werkzeug>=2.3

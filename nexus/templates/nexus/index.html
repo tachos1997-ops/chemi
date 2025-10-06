@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elemental Nexus</title>
+    <link rel="stylesheet" href="{% static 'nexus/css/styles.css' %}" />
+  </head>
+  <body>
+    <header class="banner">
+      <h1>Elemental Nexus</h1>
+      <p class="subtitle">Fuse the ages through cyber-fantasy alchemy.</p>
+    </header>
+
+    <main class="layout">
+      <section class="hud" aria-label="Player status">
+        <div class="hud-card energy">
+          <h2>Energy</h2>
+          <div class="energy-bar">
+            <div class="energy-fill" id="energy-fill"></div>
+            <span id="energy-value"></span>
+          </div>
+          <button id="reset-button" class="action">Reset Universe</button>
+        </div>
+        <div class="hud-card age">
+          <h2>Age</h2>
+          <div class="age-ring">
+            <svg viewBox="0 0 36 36" class="progress-ring">
+              <path
+                class="bg"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+              ></path>
+              <path
+                id="age-progress"
+                class="progress"
+                stroke-dasharray="0, 100"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+              ></path>
+            </svg>
+            <div class="age-label">
+              <span id="age-name"></span>
+              <small id="age-progress-text"></small>
+            </div>
+          </div>
+        </div>
+        <div class="hud-card discovery">
+          <h2>Discoveries</h2>
+          <p><span id="discovered-count"></span> found</p>
+          <p class="legacy">Legacy ×<span id="legacy-multiplier"></span></p>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Element laboratory">
+        <div class="elements-panel">
+          <h2>Elements</h2>
+          <div id="elements-grid" class="elements-grid" role="list"></div>
+        </div>
+        <div class="combiner" aria-live="polite">
+          <div class="alchemy-circle">
+            <div class="selected" id="selected-first"></div>
+            <div class="selected" id="selected-second"></div>
+          </div>
+          <button id="combine-button" class="action primary">Synthesize</button>
+          <p id="status-message" class="status-message"></p>
+        </div>
+        <div class="log-panel">
+          <h2>Discovery Log</h2>
+          <ul id="log-list" class="log-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      window.__INITIAL_STATE__ = {{ initial_state_json|safe }};
+      window.__ICON_BASE__ = "{% static 'nexus/icons' %}";
+    </script>
+    <script src="{% static 'nexus/js/game.js' %}"></script>
+  </body>
+</html>
