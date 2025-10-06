@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elemental Nexus</title>
+    <meta name="theme-color" content="#0ff2f2" />
+    <link rel="manifest" href="manifest.json" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Rajdhani:wght@400;600&display=swap');
+      body {
+        margin: 0;
+        background: radial-gradient(circle at top, #0a0d1f 0%, #04040a 80%);
+        color: #d5f6ff;
+        font-family: 'Rajdhani', sans-serif;
+        overflow: hidden;
+      }
+      #game-container {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-container"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('service-worker.js').catch((err) => {
+            console.warn('Service worker registration failed', err);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,94 +1,72 @@
-# Elemental Nexus (Python Edition)
+# Elemental Nexus
 
-Elemental Nexus is a cyber-fantasy alchemy puzzle rebuilt with a Python-first toolchain.
-The project now features a Django web client that serves the interactive laboratory UI and
-persists player progress in SQLite, plus a companion Flask microservice that exposes the
-combination logic for integrations and automated testing.
+Elemental Nexus is a cyber-fantasy neon alchemy puzzle built with Phaser 3 and bundled for mobile stores with Capacitor. Players begin with four primal elements and synthesize over one hundred discoveries across six Ages while balancing an energy economy, unlock progression, and cosmetic rewards.
 
-## Project Layout
+## Project structure
 
 ```
-├── elemental_nexus/          # Django project settings & routing
-├── nexus/                    # Gameplay app with templates, static UI, and persistence
-│   ├── templates/nexus/      # Django templates for the web experience
-│   └── static/nexus/         # CSS + JS powering the neon alchemy UI
-├── flask_service/app.py      # Flask API exposing combination endpoints
-├── shared/                   # Combination tables and gameplay helpers shared by both stacks
-├── requirements.txt          # Python dependencies
-└── tools/                    # Utility scripts (icon generation, etc.)
+elemental-nexus/
+├── src/
+│   ├── main.js
+│   ├── scenes/
+│   │   ├── BootScene.js
+│   │   ├── MenuScene.js
+│   │   ├── GameScene.js
+│   │   ├── UIScene.js
+│   │   └── TutorialScene.js
+│   ├── assets/
+│   │   ├── icons/
+│   │   ├── sounds/
+│   │   └── particles/
+│   └── utils/
+│       └── Combos.js
+├── capacitor.config.ts
+├── package.json
+├── webpack.config.js
+└── www/
 ```
 
-## Features
+## Getting started
 
-- **Django web client** with responsive HUD, energy meter, and discovery log built for
-  desktops and touch devices.
-- **Server-side persistence** backed by SQLite so discoveries, energy, and legacy bonuses
-  survive reloads.
-- **Energy + progression rules** consistent across both Django and Flask surfaces thanks
-  to shared `shared/` gameplay utilities.
-- **Flask microservice** offering `/combine`, `/combos`, and `/base-elements` endpoints for
-  automation, bots, or external tooling.
-- **Legacy reset system** that rewards completions with a stacking multiplier.
-
-## Getting Started
-
-1. Create and activate a virtual environment.
-2. Install dependencies:
+1. **Install dependencies**
    ```bash
-   pip install -r requirements.txt
+   npm install
    ```
-3. Run Django migrations:
+2. **Start the development server**
    ```bash
-   python manage.py migrate
+   npm run dev
    ```
-4. Start the Django development server:
+   This launches Webpack Dev Server with hot reload on `http://localhost:8080`.
+3. **Run production build**
    ```bash
-   python manage.py runserver
+   npm run build
    ```
-5. (Optional) launch the Flask microservice from another shell:
+   Outputs optimized assets to `dist/` and copies them into `www/` for Capacitor.
+4. **Sync with Capacitor**
    ```bash
-   python -m flask --app flask_service.app run
+   npx cap sync
    ```
+   Make sure iOS and Android platforms are added first via `npx cap add ios` and/or `npx cap add android`.
 
-Visit `http://127.0.0.1:8000/` to play in the browser. The UI communicates with Django for
-stateful actions and will periodically refresh energy to reflect regeneration.
+## Native builds
 
-## Gameplay API
+- `npm run ios` – builds the web bundle then opens the iOS project in Xcode.
+- `npm run android` – builds the bundle then opens Android Studio.
 
-The Flask service mirrors the combination logic and is ideal for automated discovery trees.
-Sample request:
+Both scripts rely on Capacitor CLI and the official Capacitor SQLite, IAP, and AdMob plugins being installed in the native projects.
 
-```bash
-curl -X POST http://127.0.0.1:5000/combine \
-  -H "Content-Type: application/json" \
-  -d '{"first": "Fire", "second": "Water", "discovered": ["Fire", "Water", "Earth", "Air"]}'
-```
+## Offline support
 
-Response:
+A lightweight service worker caches critical game files during the boot scene so Elemental Nexus remains playable offline after first load.
 
-```json
-{
-  "success": true,
-  "new_element": "Steam",
-  "energy_delta": 0,
-  "message": "Discovered Steam!",
-  "age_unlocked": "Primal",
-  "was_new_discovery": true
-}
-```
+## Testing
 
-## Tests & Tooling
+Gameplay logic is covered by unit tests executed with `npm test` using Jest + jsdom. Tests validate the combination dictionary, energy regeneration, and persistence bridge fallbacks.
 
-- `python manage.py test` – reserved for future unit tests.
-- `python manage.py check` – validate Django project settings.
-- `flake8` / `ruff` – recommended linting for the Python codebase.
+## Assets
 
-## Deployment Notes
+All icons, sound cues, and particle textures are embedded as data URIs to keep the repository text-only while still providing polished visuals and audio.
 
-- Static files are served from `nexus/static/`; collect them with `python manage.py collectstatic`
-  when preparing production builds.
-- Environment variables can override defaults in `elemental_nexus/settings.py` for SECRET_KEY,
-  database configuration, and energy tuning.
-- Both Django and Flask services are compatible with Gunicorn or any ASGI/WSGI host.
+## License
 
-Enjoy forging the ages in pure Python!
+This project is provided as production-ready sample code. Update the bundle identifier and store metadata before publishing to the App Store or Google Play.

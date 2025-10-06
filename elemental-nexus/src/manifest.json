@@ -1,0 +1,15 @@
+{
+  "name": "Elemental Nexus",
+  "short_name": "Nexus",
+  "display": "standalone",
+  "background_color": "#050713",
+  "theme_color": "#0fe2ff",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJz4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0nZycgY3g9JzUwJScgY3k9JzQwJScgcj0nNjAlJz4KICAgICAgPHN0b3Agb2Zmc2V0PScwJScgc3RvcC1jb2xvcj0nIzU5ZjNmZicvPgogICAgICA8c3RvcCBvZmZzZXQ9JzQ1JScgc3RvcC1jb2xvcj0nIzBmZTJmZicvPgogICAgICA8c3RvcCBvZmZzZXQ9JzEwMCUnIHN0b3AtY29sb3I9JyMwNzFhMmInLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSc1MTInIGhlaWdodD0nNTEyJyBmaWxsPScjMDUwNzEzJy8+CiAgPGNpcmNsZSBjeD0nMjU2JyBjeT0nMjIwJyByPScxODAnIGZpbGw9J3VybCgjZyknIHN0cm9rZT0nIzNiZmZkZCcgc3Ryb2tlLXdpZHRoPScyMCcvPgogIDxwYXRoIGQ9J00yNTYgODBMMzE2IDI0MEwyNTYgNDMyTDE5NiAyNDBaJyBmaWxsPSdub25lJyBzdHJva2U9JyNmNmZmOGMnIHN0cm9rZS13aWR0aD0nMjYnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnLz4KICA8Y2lyY2xlIGN4PScyNTYnIGN5PScyNDAnIHI9JzQyJyBmaWxsPScjZmZmZmZmJyBvcGFjaXR5PScwLjg1Jy8+Cjwvc3ZnPg==",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
