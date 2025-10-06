@@ -1,0 +1,9 @@
+node_modules/
+www/
+dist/
+.DS_Store
+capacitor.config.json
+package-lock.json
+npm-debug.log*
+.env
+coverage/
